@@ -1,0 +1,41 @@
+<html>
+    <header>
+        <title>
+            Rate Flix
+        </title>
+        <link rel="stylesheet" href="/styles.css" />
+    </header>
+    <body>
+        <div id="reviews">
+            <h1>Leave reviews for all your favorite (or least favorite) movies, right here!</h1>
+            <div id="body">
+                <select name="movies" v-model="itemSelected" placeholder="Select a movie">
+                        <option value="avengers">Avengers</option>
+                        <option value="star wars: the last jedi">Star Wars: The Last Jedi</option>
+                        <option value="jaws">Jaws</option>
+                        <option value="captain marvel">Captain Marvel</option>
+                        <option value="a quiet place">A Quiet Place</option>
+                </select>
+                <button v-on:click="getReviews()">Search</button>
+                <br>
+                <div class="review">
+                    <button v-on:click="addReview()">Add Review</button>
+                    <button v-on:click="deleteReview()">Clear Reviews</button>
+                    <br>
+                    <input type="text" placeholder="Name" id="name" v-model="name" />
+                    <br>
+                    <textarea rows="7" cols="70" placeholder="Leave a review here!" v-model="review"></textarea>
+                </div>
+                <div v-for="review in reviews">
+                    <p>{{review.review}}</p>
+                    <p>- {{review.reviewerName}}</p>
+                    <button v-on:click="deleteReview(review.review)">Delete</button>
+                </div>
+            </div>
+            
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+        <script src="/script.js"></script>
+    </body>
+</html>

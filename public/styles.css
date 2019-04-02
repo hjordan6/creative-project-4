@@ -1,0 +1,24 @@
+.review {
+    margin-top: 200px;
+}
+
+#name {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right: 20px;
+}
+
+#body {
+    margin-left: 25px;
+}
+
+h1 {
+    background-color: darkgrey;
+    padding: 40px;
+    text-align: center;
+    font-size: 50px;
+}
+
+body {
+    background-color: antiquewhite;
+}
